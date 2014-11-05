@@ -4,9 +4,9 @@
 		<ul>
 			<?php
 				if(!loggedin()){
-					echo '<li class=""><a href="login.php">Log in</a></li>';
+					echo '<li class=""><a href="login.html">Log in</a></li>';
 				}else{
-					echo '<li class=""><a href="logout.php">Log Out</a></li>';
+					echo '<li class=""><a href="logout.html">Log Out</a></li>';
 				}
 			?>
 		</ul>
@@ -23,7 +23,7 @@
 		<h4>Search site</h4>
 		<ul>
 			<li class="text">
-				<form action="search.php" method="get">
+				<form action="search.html" method="get">
 					<label>Document Title:
 						<input type="text" name="searchparams" />
 					</label>

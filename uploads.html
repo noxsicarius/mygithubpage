@@ -1,10 +1,10 @@
 <?php
-	require 'core.inc.php';
-	require 'connect.inc.php';
+	require 'core.inc.html';
+	require 'connect.inc.html';
 	if(loggedin()) {
 		$user_fullname =getfield('name').' ,you are logged in';
 		$logged_in=1;							
-		//echo ', you are logged in  '.'<a href="logout.php">Log out</a><br>';							
+		//echo ', you are logged in  '.'<a href="logout.html">Log out</a><br>';							
 	}else{
 		$logged_in=0;
 	}	
@@ -41,7 +41,7 @@
 						$content = addslashes($content); 
 						fclose($extract);
 					} else {
-						die('Cannot Upload an empty File '.'<a href="uploads.php">Go Back</a>');
+						die('Cannot Upload an empty File '.'<a href="uploads.html">Go Back</a>');
 					}
 					
 					$location ='uploads/';
@@ -78,7 +78,7 @@
 						if ($query_run = mysql_query($query)){
 							if(move_uploaded_file($tmp_name, $location.$name)){
 								$Sring_Message= "$name".' Uploaded';
-								include 'filetokeywords.php';
+								include 'filetokeywords.html';
 							}
 						}else {
 							$Sring_Message= mysql_error();
@@ -122,7 +122,7 @@
         <h2>Upload, Share, and compare notes</h2>
     </header>
     <nav>
-    	<?php include 'menu.php'; ?>
+    	<?php include 'menu.html'; ?>
     </nav>
 
 
@@ -141,7 +141,7 @@
 					echo '<article>';
 					echo "$Sring_Message".'<br>';
 					echo '</article>';
-					echo '<form action="uploads.php" method="POST" enctype="multipart/form-data">
+					echo '<form action="uploads.html" method="POST" enctype="multipart/form-data">
 
 						Title:<br> <input type="text" name ="title"><br><br>
 						Chapter:<br> <input type="text" name ="chapter"><br><br>
@@ -161,7 +161,7 @@
 						echo $File_names[$x].'<br>';
 					}
 				}else{
-					echo 'Please '.'<a href="register.php">Register</a>'.' or '.'<a href="login.php">Log in</a>'.' before uploading a file';
+					echo 'Please '.'<a href="register.html">Register</a>'.' or '.'<a href="login.html">Log in</a>'.' before uploading a file';
 				}
 				
 			?>
@@ -171,13 +171,13 @@
         
         <aside class="sidebar">
 	
-            <?php include 'aside.php'; ?>
+            <?php include 'aside.html'; ?>
 		
       </aside>
     	<div class="clear"></div>
   </div>
     <footer>
-        <?php include 'footer.php' ?>;
+        <?php include 'footer.html' ?>;
     </footer>
 </div>
 </body>

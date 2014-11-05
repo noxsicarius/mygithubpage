@@ -1,12 +1,12 @@
 <?php
 
-	require 'core.inc.php';
-	require 'connect.inc.php';
+	require 'core.inc.html';
+	require 'connect.inc.html';
 
 	if(loggedin()) {
 		$user_fullname =getfield('name').' ,you are logged in';
 		$logged_in=1;							
-		//echo ', you are logged in  '.'<a href="logout.php">Log out</a><br>';							
+		//echo ', you are logged in  '.'<a href="logout.html">Log out</a><br>';							
 	}else{
 		$logged_in=0;
 	}	
@@ -29,7 +29,7 @@
 		</header>
 
 		<nav>
-			<?php include 'menu.php'; ?>
+			<?php include 'menu.html'; ?>
 		</nav>
 
 		<div id="body">
@@ -42,7 +42,7 @@
 
 				<?php
 					if($logged_in==0){
-						include 'login.inc.php';
+						include 'login.inc.html';
 					}else{
 						echo $user_fullname;
 					}
@@ -52,14 +52,14 @@
 			</section>
 			
 			<aside class="sidebar">	
-				<?php include 'aside.php'; ?>
+				<?php include 'aside.html'; ?>
 			</aside>
 
 			<div class="clear"></div>
 		</div>
 		
 		<footer>
-			<?php include 'footer.php' ?>;
+			<?php include 'footer.html' ?>;
 		</footer>
 	</div>
 </body>

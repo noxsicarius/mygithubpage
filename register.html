@@ -1,6 +1,6 @@
 <?php
-	require 'core.inc.php';
-	require 'connect.inc.php';
+	require 'core.inc.html';
+	require 'connect.inc.html';
 	$ALL_fields=' ';
 	$Not_working=' ';
 	$password_match= ' ';
@@ -32,7 +32,7 @@
 						$query = "INSERT INTO users VALUES (id,'".mysql_real_escape_string($username)."','".mysql_real_escape_string($password)."','".mysql_real_escape_string($name)."','".mysql_real_escape_string($school)."')";
 						//$query="INSERT INTO 'users' VALUES ('','".mysql_real_escape_string($username)."','".mysql_real_escape_string($password)."','".mysql_real_escape_string($name)."','".mysql_real_escape_string($school)."')";
 						if ($query_run = mysql_query($query)){
-							header('Location: register_success.php');
+							header('Location: register_success.html');
 						}else {
 							$Not_working= 'Sorry , try again later';
 						}
@@ -65,7 +65,7 @@
 		</header>
 
 		<nav>
-			<?php include 'menu.php'; ?>
+			<?php include 'menu.html'; ?>
 		</nav>
 
 		<div id="body">
@@ -80,7 +80,7 @@
 					if($logged_in==1){
 						echo 'You are already logged in.';
 					}else {
-						echo '<form action="register.php" method="POST">
+						echo '<form action="register.html" method="POST">
 								Username:<br> <input type="text" name ="username"><br><br>
 								Password:<br> <input type="password" name ="password"><br><br>
 								Retype Password:<br> <input type="password" name ="password_again"><br><br>
@@ -104,14 +104,14 @@
 			</section>
 			
 			<aside class="sidebar">		
-				<?php include 'aside.php'; ?>
+				<?php include 'aside.html'; ?>
 			</aside>
 			
 			<div class="clear"></div>
 		</div>
 		
 		<footer>
-			<?php include 'footer.php'; ?>
+			<?php include 'footer.html'; ?>
 		</footer>
 	</div>
 </body>
